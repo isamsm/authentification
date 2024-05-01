@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cadastro </title>
+    <link rel="stylesheet" type="text/css" href="register.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        const sendData = (event) => {
+            event.preventDefault()
+            
+            let form = document.querySelector('#card-register')
+            let inputs = form.querySelectorAll('input')
+            let filled = true
+            let filledEmail = true
+            let data = {}
+
+            Object.values(inputs).forEach((i) => {
+                if(i.name === 'email') {
+                    !/^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(i.value) ? filledEmail = false : ''
+                } 
+                
+                if(i.value) {
+                    data[i.name] = i.value
+                } else {
+                    filled = false
+                }
+            })
+
+            if(!filled) {
+                swal("Opa...", "Preencha todos os campos!", "error")
+                return
+            } else if (!filledEmail) {
+                swal("Opa...", "Este é um email inválido!", "error")
+                return
+            }
+
+            let allData = JSON.parse(localStorage.getItem('cadastro')) || []
+            allData.push(data)
+            localStorage.setItem('cadastro', JSON.stringify(allData))
+            swal("Eba!", "Cadastro realizado com sucesso", "success")
+        }
+    </script>
+</head>
+<body>
+    <section id="register">
+        <div>
+            <img id="image-register" src="register.svg" alt="imagem de representação do cadastro"/>
+        </div>
+        <form id="card-register">
+            <h1> Cadastrar </h1>
+            <label for="name"> Nome </label>
+            <input name="name" type="name" autocomplete="name" placeholder="Informe seu nome"/>
+            <label for="email"> Email </label>
+            <input name="email" type="email" autocomplete="email" placeholder="Informe seu email"/>
+            <label for="password"> Senha </label>
+            <input name="password" type="password" autocomplete="current-password" placeholder="Informe sua senha"/>
+            <div id="buttons-register">
+                <button id="register-btn" type="submit" onclick="sendData(event)"> Enviar </button>
+                <button id="login-btn"><a href="login.html"/> Logar </button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

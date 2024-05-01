@@ -1,0 +1,144 @@
+body {
+    background: linear-gradient(270deg, #4f4b90, #aba6fd, #8078ff);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-family: Helvetica, sans-serif;
+}
+
+#register {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#image-register {
+    height: 350px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+#card-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    gap: 5px;
+    height: 60vh;
+    width: 50vh;
+    border: 5px solid transparent;
+    border-radius: 10px;
+    background-color: #3f3d56;
+    color: white;
+}
+
+#card-register h1 {
+    font-size: 30px;
+    margin: 0px;
+}
+
+#card-register label {
+    width: 70%;
+    padding: 5px 0px 5px 0px;
+}
+
+#card-register input {
+    width: 70%;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#buttons-register {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    width: 70%;
+    justify-content: center;
+    gap: 5px;
+}
+
+#register-btn {
+    width: 50%;
+    background-color: #6c63ff;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    color: #3f3d56;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#login-btn {
+    width: 50%;
+    background-color: #3f3d56;
+    border: 0;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#login-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    #card-register h1 {
+        font-size: 20px;
+        margin: 0px;
+    }
+
+    #card-register {
+        height: 45vh;
+        width: 35vh;
+    }
+
+    #image-register {
+        height: 140px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1280px) {
+    #card-register h1 {
+        font-size: 20px;
+        margin: 0px;
+    }
+
+    #card-register {
+        height: 48vh;
+        width: 38vh;
+    }
+
+    #image-register {
+        height: 250px;
+    }
+}
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}

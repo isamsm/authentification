@@ -1,0 +1,142 @@
+body {
+    background: linear-gradient(270deg, #4f4b90, #aba6fd, #8078ff);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-family: Helvetica, sans-serif;
+}
+
+#login {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#image-login {
+    height: 400px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+#card-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    gap: 5px;
+    height: 50vh;
+    width: 50vh;
+    border: 5px solid transparent;
+    border-radius: 10px;
+    background-color: #3f3d56;
+    color: white;
+}
+
+#card-login h1 {
+    font-size: 30px;
+    margin: 0px;
+}
+
+#card-login label {
+    width: 70%;
+    padding: 5px 0px 5px 0px;
+}
+
+#card-login input {
+    width: 70%;
+    border: 5px solid transparent;
+    border-radius: 5px;
+}
+
+#buttons-login {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    width: 100%;
+    justify-content: center;
+    gap: 5px;
+}
+
+#login-btn {
+    width: 30%;
+    background-color: #6c64fa;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    color: #3f3d56;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#register-btn {
+    width: 30%;
+    background-color: #3f3d56;
+    border: 0;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#register-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    #card-login h1 {
+        font-size: 20px;
+        margin: 0px;
+    }
+
+    #card-login {
+        height: 35vh;
+        width: 35vh;
+    }
+
+    #image-login {
+        height: 180px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    #card-login h1 {
+        font-size: 20px;
+        margin: 0px;
+    }
+
+    #card-login {
+        height: 40vh;
+        width: 40vh;
+    }
+
+    #image-login {
+        height: 300px;
+    }
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}

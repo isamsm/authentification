@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login </title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        const getData = (event) => {
+            event.preventDefault()
+
+            let verifiedFields = true
+            let verifiedInfo = true
+            let email = ''
+            let password = ''
+
+            let form = document.querySelector('#card-login')
+            let inputs = form.querySelectorAll('input')
+            Object.values(inputs).forEach((i) => {
+                if(i.name === 'email') {
+                    email = i.value
+                } else if(i.name === 'password') {
+                    password = i.value
+                }
+                
+                if(i.value) {
+                    let register = localStorage.getItem('cadastro') 
+                    if(register) {
+                        let registerInfo = JSON.parse(register)
+                        let found = false
+                        registerInfo.forEach(r => {
+                            if (r.email === email && r.password === password) {
+                                found = true
+                            }
+                        })
+                        verifiedInfo = found
+                    }
+                } else {
+                    verifiedFields = false
+                    return
+                }
+            })
+
+            if(!verifiedFields) {
+                swal("Opa...", "Preencha todos os campos!", "error")
+                return
+            }
+            if(!verifiedInfo) {
+                swal("Opa...", "Essa conta não existe!", "error")
+                return
+            }
+
+            swal("Eba!", "Logado com sucesso", "success")
+        }
+    </script>
+</head>
+<body>
+    <section id="login">
+        <div id="image-login">
+            <img id="image-login" src="login.svg" alt="imagem de representação do login"/>
+        </div>
+        <form id="card-login">
+            <h1> Login </h1>
+            <label for="email"> E-mail </label>
+            <input name="email" type="email" autocomplete="email" placeholder="Informe seu email"/>
+            <label for="password"> Senha </label>
+            <input name="password" type="password" autocomplete="current-password" placeholder="Informe sua senha"/>
+            <div id="buttons-login">
+                <button id="login-btn" type="submit" onclick="getData(event)"> Entrar </button>
+                <button id="register-btn"><a href="register.html"/> Cadastrar </button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
