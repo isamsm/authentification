@@ -38,7 +38,9 @@
             let allData = JSON.parse(localStorage.getItem('cadastro')) || []
             allData.push(data)
             localStorage.setItem('cadastro', JSON.stringify(allData))
-            swal("Eba!", "Cadastro realizado com sucesso", "success")
+            swal("Eba!", "Cadastro realizado com sucesso", "success").then(() => {
+                window.location.href = 'login.html'
+            })
         }
     </script>
 </head>
@@ -57,7 +59,7 @@
             <input name="password" type="password" autocomplete="current-password" placeholder="Informe sua senha"/>
             <div id="buttons-register">
                 <button id="register-btn" type="submit" onclick="sendData(event)"> Enviar </button>
-                <button id="login-btn"><a href="login.html"/> Logar </button>
+                <button id="login-btn"><a href="index.html"/> Logar </button>
             </div>
         </form>
     </section>
