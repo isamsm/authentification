@@ -59,6 +59,27 @@ body {
     border-radius: 5px;
 }
 
+#div-pass {
+    width: 100%;
+    margin-right: -30%;
+    position: relative;
+}
+
+#pass-icon {
+    background-image: url("eye.svg");
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    cursor: pointer;
+}
+
+#pass-icon.hidden {
+    background-image: url("closed.svg");
+}
+
 #buttons-login {
     display: flex;
     flex-direction: row;

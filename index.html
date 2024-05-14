@@ -6,6 +6,19 @@
     <link rel="stylesheet" type="text/css" href="login.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
+        const passVisibility = () => {
+            let passInput = document.getElementById('input-pass')
+            let passIcon = document.getElementById('pass-icon')
+
+            if(passInput.type === 'password') {
+                passInput.setAttribute('type', 'text')
+                passIcon.classList.add('hidden')
+            } else {
+                passInput.setAttribute('type', 'password')
+                passIcon.classList.remove('hidden')
+            }
+        }
+
         const getData = (event) => {
             event.preventDefault()
 
@@ -64,7 +77,10 @@
             <label for="email"> E-mail </label>
             <input name="email" type="email" autocomplete="email" placeholder="Informe seu email"/>
             <label for="password"> Senha </label>
-            <input name="password" type="password" autocomplete="current-password" placeholder="Informe sua senha"/>
+            <div id="div-pass">
+                <input id="input-pass" name="password" type="password" autocomplete="current-password" placeholder="Informe sua senha"/>
+                <div id="pass-icon" onclick="passVisibility()"></div>
+            </div>
             <div id="buttons-login">
                 <button id="login-btn" type="submit" onclick="getData(event)"> Entrar </button>
                 <button id="register-btn"><a href="register.html"/> Cadastrar </button>
